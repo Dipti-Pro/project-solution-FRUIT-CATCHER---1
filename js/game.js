@@ -73,12 +73,12 @@ class Game{
                  }
                 
                 if(player.score>=5){
-                    gameState = 2; 
                     player.rank += 1;
                     Player.updatePlayerAtEnd(player.rank);
                     player.update();
                     this.showRank();
-                    
+                    gameState = 2; 
+
                 }
                  
 
@@ -131,18 +131,15 @@ class Game{
 
     }
     showRank() {
-        alert("Awesome !! You finished the game! You rank is :" +player.rank)
-      }
+        swal({
+            title: `Awesome!${"\n"}Rank${"\n"}${player.rank}`,
+            text: "You reached the finish line successfully",
+            imageUrl:
+              "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
+            imageSize: "100x100",
+            confirmButtonText: "Ok"
+          });
+        }
 
-gameOver() {
-    textSize(40)
-    fill("white")
- text("GAME OVER",displayWidth/2-400,displayHeight/2-200)
-    }
-    
-    end(){
-       console.log("Game Ended");
-       console.log(player.rank)
-       this.gameOver();
-    }
+
 }
