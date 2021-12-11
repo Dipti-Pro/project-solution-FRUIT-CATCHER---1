@@ -3,17 +3,12 @@ class Game{
 
     }
     getState() {
-        var gameStateRef = database.ref('gameState');
-        gameStateRef.on("value", function (data) {
-            gameState = data.val();
-        })
-
+       //complete this function
     }
 
     update(state) {
-        database.ref('/').update({
-            gameState: state
-        });
+       //complete this function
+        
     }
     async start() {
             if (gameState === 0) {
